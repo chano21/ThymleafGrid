@@ -19,14 +19,14 @@
 <table id="myTable">
      <thead>
     <tr>
-         <th>Email</th>
-         <th>Name</th>
+      <th th:each="item : ${NameList}" th:text="${item}">User Colmns</th>
      </tr>
      </thead>
      <tbody>
      <tr th:each="user : ${gridlist}">
-         <td th:text="${user.age}">emil</td>    
-         <td th:text="${user.name}">name</td>
+         <td th:text="${user.id}">id</td>    
+       <td th:text="${user.name}">emil</td>    
+         <td th:text="${user.age}">name</td>
      </tr>
      </tbody>
      </table>
