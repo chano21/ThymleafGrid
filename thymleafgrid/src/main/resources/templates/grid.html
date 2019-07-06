@@ -2,61 +2,33 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>게시판</title>
-    <link rel="stylesheet" href="/css/dadtatable.css">
-    <script src="/js/datatable.js">
+    <title>GridTest</title>
+    <link rel="stylesheet" href="/css/datatable.css">
+    <script src="/js/jq.js"></script>
+    <script src="/js/datatable.js"></script>
     
-    
+    <script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+    	
     </script>
+    
 </head>
-<body class="container">
-
-<div class="jumbotron">
-    <h2>스프링 부트 게시판</h2>
-</div>
-
-<table class="table">
+<body >
+<table id="myTable">
+     <thead>
     <tr>
-        <th>글 번호111</th>
-        <th>글쓴이</th>
-        <th>글 제목</th>
-    </tr>
-    <tr th:each="board: ${boardList}">
-        <td th:text="${board.id}"></td>
-        <td th:text="${board.writer.name}"></td>
-        <td th:text="${board.title}"></td>
-    </tr>
-</table>
-
-<nav style="text-align: center;">
-    <ul class="pagination">
-        <li class="disabled">
-            <a href="#" aria-label="First">
-                <span aria-hidden="true">First</span>
-            </a>
-        </li>
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&lt;</span>
-            </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&gt;</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" aria-label="Last">
-                <span aria-hidden="true">Last</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-
+         <th>Email</th>
+         <th>Name</th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr th:each="user : ${gridlist}">
+         <td th:text="${user.age}">emil</td>    
+         <td th:text="${user.name}">name</td>
+     </tr>
+     </tbody>
+     </table>
 </body>
 </html>
